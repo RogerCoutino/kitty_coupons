@@ -58,6 +58,8 @@
 
     button {
       font-family: inherit;
+      -webkit-appearance: none;
+      appearance: none;
     }
 
     .app {
@@ -113,9 +115,12 @@
 
       border-radius: 23px;
 
-      background: rgba(255,255,255,.75);
+      background:
+        rgba(255,255,255,.75);
 
-      border: 1.5px solid rgba(255,255,255,.9);
+      border:
+        1.5px solid
+        rgba(255,255,255,.9);
 
       box-shadow:
         0 10px 30px
@@ -157,21 +162,31 @@
 
       overflow: hidden;
 
-      background: var(--coupon-color);
+      background:
+        var(--coupon-color);
 
-      border: 2px solid rgba(255,255,255,.8);
+      border:
+        2px solid
+        rgba(255,255,255,.8);
 
       box-shadow:
-        0 16px 36px rgba(105,75,87,.12),
-        inset 0 1px rgba(255,255,255,.8);
+        0 16px 36px
+        rgba(105,75,87,.12),
+        inset 0 1px
+        rgba(255,255,255,.8);
 
       transition:
         transform .18s ease,
         box-shadow .18s ease;
+
+      -webkit-transform: translateZ(0);
+      transform: translateZ(0);
     }
 
     .coupon:active {
-      transform: scale(.99);
+      transform:
+        scale(.99)
+        translateZ(0);
     }
 
     .coupon::before {
@@ -187,7 +202,8 @@
       right: -70px;
       top: -65px;
 
-      background: rgba(255,255,255,.22);
+      background:
+        rgba(255,255,255,.22);
     }
 
     .coupon::after {
@@ -203,7 +219,8 @@
       left: -45px;
       bottom: -50px;
 
-      background: rgba(255,255,255,.2);
+      background:
+        rgba(255,255,255,.2);
     }
 
     .coupon-header {
@@ -226,7 +243,8 @@
 
       border-radius: 999px;
 
-      background: rgba(255,255,255,.63);
+      background:
+        rgba(255,255,255,.63);
 
       font-size: 11px;
       font-weight: 850;
@@ -294,10 +312,13 @@
         transform .12s ease,
         box-shadow .12s ease,
         background .2s ease;
+
+      touch-action: manipulation;
     }
 
     .redeem-button:active {
-      transform: translateY(5px);
+      transform:
+        translateY(5px);
 
       box-shadow:
         0 2px 0
@@ -329,7 +350,17 @@
         kittyFloat
         3.2s ease-in-out infinite;
 
-      transform-origin: bottom center;
+      -webkit-animation:
+        kittyFloat
+        3.2s ease-in-out infinite;
+
+      transform-origin:
+        bottom center;
+
+      -webkit-transform-origin:
+        bottom center;
+
+      will-change: transform;
     }
 
     .kitty-black {
@@ -374,6 +405,20 @@
       }
     }
 
+    @-webkit-keyframes kittyFloat {
+      0%, 100% {
+        -webkit-transform:
+          translateY(0)
+          rotate(-2deg);
+      }
+
+      50% {
+        -webkit-transform:
+          translateY(-6px)
+          rotate(2deg);
+      }
+    }
+
     /* BODY */
 
     .kitty-body {
@@ -388,7 +433,8 @@
       border-radius:
         45% 45% 35% 35%;
 
-      background: var(--fur);
+      background:
+        var(--fur);
 
       z-index: 2;
     }
@@ -404,7 +450,8 @@
 
       border-radius: 50%;
 
-      background: var(--belly);
+      background:
+        var(--belly);
 
       opacity: .95;
     }
@@ -423,7 +470,8 @@
       border-radius:
         45% 45% 48% 48%;
 
-      background: var(--fur);
+      background:
+        var(--fur);
 
       z-index: 5;
     }
@@ -438,7 +486,8 @@
 
       top: -11px;
 
-      background: var(--fur);
+      background:
+        var(--fur);
 
       z-index: -1;
     }
@@ -535,11 +584,15 @@
 
       border-radius: 50%;
 
-      background: #33282c;
+      background:
+        #33282c;
 
       animation:
         blink
         4.2s infinite;
+
+      transform-origin:
+        center center;
     }
 
     .eye-left {
@@ -586,7 +639,8 @@
       left: 17px;
       top: 34px;
 
-      background: #fff8f2;
+      background:
+        #fff8f2;
     }
 
     .nose {
@@ -601,7 +655,8 @@
       border-radius:
         50% 50% 65% 65%;
 
-      background: #e58491;
+      background:
+        #e58491;
 
       z-index: 3;
     }
@@ -622,13 +677,14 @@
       border-radius: 50%;
     }
 
-    /* ORANGE STRIPES */
+    /* MARKINGS */
 
     .kitty-marking {
       display: none;
     }
 
-    .kitty-orange .kitty-marking {
+    .kitty-orange
+    .kitty-marking {
       display: block;
 
       position: absolute;
@@ -641,16 +697,18 @@
 
       border-radius: 5px;
 
-      background: var(--fur-dark);
+      background:
+        var(--fur-dark);
 
       box-shadow:
-        -10px 3px 0 -1px var(--fur-dark),
-        10px 3px 0 -1px var(--fur-dark);
+        -10px 3px 0 -1px
+        var(--fur-dark),
+        10px 3px 0 -1px
+        var(--fur-dark);
     }
 
-    /* TUXEDO FOREHEAD */
-
-    .kitty-tuxedo .kitty-marking {
+    .kitty-tuxedo
+    .kitty-marking {
       display: block;
 
       position: absolute;
@@ -661,7 +719,8 @@
       top: -1px;
       left: 23px;
 
-      background: #fff8f2;
+      background:
+        #fff8f2;
 
       clip-path:
         polygon(
@@ -686,7 +745,8 @@
       border-radius:
         60% 60% 50% 50%;
 
-      background: var(--paw);
+      background:
+        var(--paw);
 
       z-index: 5;
     }
@@ -712,16 +772,26 @@
 
       border-radius: 15px;
 
-      background: var(--fur);
+      background:
+        var(--fur);
 
       transform-origin:
+        left center;
+
+      -webkit-transform-origin:
         left center;
 
       animation:
         tailWag
         2.8s ease-in-out infinite;
 
+      -webkit-animation:
+        tailWag
+        2.8s ease-in-out infinite;
+
       z-index: 1;
+
+      will-change: transform;
     }
 
     .kitty-tail::after {
@@ -736,7 +806,8 @@
 
       border-radius: 50%;
 
-      background: var(--fur-dark);
+      background:
+        var(--fur-dark);
     }
 
     @keyframes tailWag {
@@ -747,6 +818,18 @@
 
       50% {
         transform:
+          rotate(-14deg);
+      }
+    }
+
+    @-webkit-keyframes tailWag {
+      0%, 100% {
+        -webkit-transform:
+          rotate(16deg);
+      }
+
+      50% {
+        -webkit-transform:
           rotate(-14deg);
       }
     }
@@ -782,12 +865,16 @@
 
     .whiskers::before {
       top: -5px;
-      transform: rotate(8deg);
+
+      transform:
+        rotate(8deg);
     }
 
     .whiskers::after {
       top: 5px;
-      transform: rotate(-8deg);
+
+      transform:
+        rotate(-8deg);
     }
 
     .whiskers-left {
@@ -799,56 +886,137 @@
     }
 
     /* =========================
-       CELEBRATION
+       REDEEM CELEBRATION
     ========================= */
 
     .coupon.celebrate .kitty {
       animation:
         kittyCelebrate
-        .55s ease-in-out
-        2;
+        .5s
+        cubic-bezier(.34, 1.56, .64, 1)
+        3 !important;
+
+      -webkit-animation:
+        kittyCelebrate
+        .5s
+        cubic-bezier(.34, 1.56, .64, 1)
+        3 !important;
     }
 
     @keyframes kittyCelebrate {
-      0%, 100% {
+
+      0% {
         transform:
           translateY(0)
-          rotate(0);
+          rotate(0deg)
+          scale(1);
       }
 
-      30% {
+      25% {
+        transform:
+          translateY(-18px)
+          rotate(-8deg)
+          scale(1.08);
+      }
+
+      50% {
+        transform:
+          translateY(-5px)
+          rotate(8deg)
+          scale(1.03);
+      }
+
+      75% {
         transform:
           translateY(-14px)
-          rotate(-8deg);
+          rotate(-5deg)
+          scale(1.08);
       }
 
-      65% {
+      100% {
         transform:
-          translateY(-9px)
-          rotate(8deg);
+          translateY(0)
+          rotate(0deg)
+          scale(1);
       }
     }
 
-    .paw-pop {
+    @-webkit-keyframes kittyCelebrate {
+
+      0% {
+        -webkit-transform:
+          translateY(0)
+          rotate(0deg)
+          scale(1);
+      }
+
+      25% {
+        -webkit-transform:
+          translateY(-18px)
+          rotate(-8deg)
+          scale(1.08);
+      }
+
+      50% {
+        -webkit-transform:
+          translateY(-5px)
+          rotate(8deg)
+          scale(1.03);
+      }
+
+      75% {
+        -webkit-transform:
+          translateY(-14px)
+          rotate(-5deg)
+          scale(1.08);
+      }
+
+      100% {
+        -webkit-transform:
+          translateY(0)
+          rotate(0deg)
+          scale(1);
+      }
+    }
+
+    /* =========================
+       PARTICLES
+    ========================= */
+
+    .paw-pop,
+    .sparkle {
       position: fixed;
 
       pointer-events: none;
 
-      z-index: 999;
+      z-index: 99999;
 
-      font-size: 22px;
+      user-select: none;
+      -webkit-user-select: none;
+
+      will-change:
+        transform,
+        opacity;
+    }
+
+    .paw-pop {
+      font-size: 24px;
 
       animation:
+        pawExplosion
+        1.1s ease-out forwards;
+
+      -webkit-animation:
         pawExplosion
         1.1s ease-out forwards;
     }
 
     @keyframes pawExplosion {
-      from {
+      0% {
         transform:
-          translateY(0)
+          translate3d(0, 0, 0)
           scale(.3)
-          rotate(0);
+          rotate(0deg);
 
         opacity: 0;
       }
@@ -857,50 +1025,97 @@
         opacity: 1;
       }
 
-      to {
+      100% {
         transform:
-          translateY(-120px)
+          translate3d(var(--x), -120px, 0)
           scale(1.3)
-          rotate(35deg);
+          rotate(var(--rotation));
+
+        opacity: 0;
+      }
+    }
+
+    @-webkit-keyframes pawExplosion {
+      0% {
+        -webkit-transform:
+          translate3d(0, 0, 0)
+          scale(.3)
+          rotate(0deg);
+
+        opacity: 0;
+      }
+
+      20% {
+        opacity: 1;
+      }
+
+      100% {
+        -webkit-transform:
+          translate3d(var(--x), -120px, 0)
+          scale(1.3)
+          rotate(var(--rotation));
 
         opacity: 0;
       }
     }
 
     .sparkle {
-      position: fixed;
-
-      pointer-events: none;
-
-      z-index: 999;
-
-      font-size: 18px;
+      font-size: 20px;
 
       animation:
         sparklePop
-        .9s ease-out forwards;
+        1s ease-out forwards;
+
+      -webkit-animation:
+        sparklePop
+        1s ease-out forwards;
     }
 
     @keyframes sparklePop {
-      from {
-        opacity: 0;
-
+      0% {
         transform:
+          translate3d(0, 0, 0)
           scale(.2)
           rotate(0deg);
+
+        opacity: 0;
       }
 
-      30% {
+      25% {
         opacity: 1;
       }
 
-      to {
-        opacity: 0;
-
+      100% {
         transform:
-          translateY(-60px)
+          translate3d(var(--x), -85px, 0)
           scale(1.5)
-          rotate(90deg);
+          rotate(var(--rotation));
+
+        opacity: 0;
+      }
+    }
+
+    @-webkit-keyframes sparklePop {
+      0% {
+        -webkit-transform:
+          translate3d(0, 0, 0)
+          scale(.2)
+          rotate(0deg);
+
+        opacity: 0;
+      }
+
+      25% {
+        opacity: 1;
+      }
+
+      100% {
+        -webkit-transform:
+          translate3d(var(--x), -85px, 0)
+          scale(1.5)
+          rotate(var(--rotation));
+
+        opacity: 0;
       }
     }
 
@@ -934,24 +1149,6 @@
           scale(1.15);
       }
     }
-
-    /* =========================
-       ACCESSIBILITY
-    ========================= */
-
-    @media
-    (prefers-reduced-motion: reduce) {
-
-      *,
-      *::before,
-      *::after {
-        animation-duration:
-          .01ms !important;
-
-        animation-iteration-count:
-          1 !important;
-      }
-    }
   </style>
 </head>
 
@@ -959,9 +1156,7 @@
 
 <main class="app">
 
-  <!-- =====================
-       HERO
-  ====================== -->
+  <!-- HERO -->
 
   <header class="hero">
 
@@ -972,27 +1167,40 @@
         <div class="kitty-tail"></div>
 
         <div class="kitty-body">
+
           <div class="kitty-belly"></div>
+
           <div class="kitty-paw paw-left"></div>
+
           <div class="kitty-paw paw-right"></div>
+
         </div>
 
         <div class="kitty-head">
 
           <div class="ear ear-left"></div>
+
           <div class="ear ear-right"></div>
 
           <div class="kitty-marking"></div>
 
           <div class="eye eye-left"></div>
+
           <div class="eye eye-right"></div>
 
           <div class="muzzle"></div>
+
           <div class="nose"></div>
+
           <div class="mouth"></div>
 
-          <div class="whiskers whiskers-left"></div>
-          <div class="whiskers whiskers-right"></div>
+          <div
+            class="whiskers whiskers-left"
+          ></div>
+
+          <div
+            class="whiskers whiskers-right"
+          ></div>
 
         </div>
 
@@ -1005,17 +1213,15 @@
     </h1>
 
     <p class="subtitle">
-      Cupones gatunos aprobados por el
-      Consejo Internacional de Gatitos y el dev.
+      Cupones mágicos aprobados por el
+      Consejo Internacional de Gatitos.
       Reutilizables por toda la eternidad. ✨
     </p>
 
   </header>
 
 
-  <!-- =====================
-       STATUS
-  ====================== -->
+  <!-- STATUS -->
 
   <section class="status">
 
@@ -1030,9 +1236,7 @@
   </section>
 
 
-  <!-- =====================
-       COUPONS
-  ====================== -->
+  <!-- COUPONS -->
 
   <section
     class="coupons"
@@ -1041,9 +1245,9 @@
 
 
   <footer>
-    Made with ♡, coffee &
+    Made with ♡, snacks &
     <span class="tiny-paw">🐾</span>
-    music
+    cat hair
   </footer>
 
 </main>
@@ -1053,10 +1257,7 @@
 
   /*
   ==========================================
-  COUPONS
-
-  Para agregar un cupón nuevo solamente
-  agrega otro objeto a esta lista.
+  CUPONES
   ==========================================
   */
 
@@ -1067,6 +1268,8 @@
       label: "☕ Programmer Fuel",
       description:
         "Válido hasta que se muera el programador. Porque echar café siempre es una buena idea.",
+      notification:
+        "☕ Coffee protocol activated. El programador ha sido convocado.",
       kitty: "kitty-orange",
       color: "#ffdce7"
     },
@@ -1076,6 +1279,8 @@
       label: "🎃 Seasonal Kitty",
       description:
         "Válido durante la temporada oficial del pumpkin. Ideal para esos días en los que el calendario dice otoño aunque el clima no esté cooperando.",
+      notification:
+        "🎃 Pumpkin season emergency detected. Se solicita Pumpkin Spice inmediatamente.",
       kitty: "kitty-cream",
       color: "#ffe4bd"
     },
@@ -1085,6 +1290,8 @@
       label: "🤍 Hug Kitty",
       description:
         "Canjeable en cualquier momento y sin necesidad de justificación, porque los abrazos jamás están de más. Incluye modalidad de duración extendida.",
+      notification:
+        "🤍 Hug requested! Favor de entregar un abrazo con prioridad gatuna.",
       kitty: "kitty-tuxedo",
       color: "#ddd4ff"
     },
@@ -1094,6 +1301,8 @@
       label: "🍜 Ramen Kitty",
       description:
         "Canjeable por un buen ramen del matgo. Especialmente recomendado para días fríos, días largos o cualquier situación que pueda solucionarse con fideos.",
+      notification:
+        "🍜 Ramen protocol initiated. Los fideos han sido oficialmente solicitados.",
       kitty: "kitty-black",
       color: "#cef0df"
     },
@@ -1103,6 +1312,8 @@
       label: "🍔 Burger Kitty",
       description:
         "Valido en cualquier hamburgueseria (mas valido si es del frikis :v).",
+      notification:
+        "🍔 Burger alert! Se ha determinado científicamente que una hamburguesa es necesaria.",
       kitty: "kitty-orange",
       color: "#ffd8c7"
     },
@@ -1112,6 +1323,8 @@
       label: "🍳 Morning Kitty",
       description:
         "Porque empezar el día con algo rico mejora considerablemente cualquier pronóstico. Válido incluso si técnicamente ya es hora de comer.",
+      notification:
+        "🍳 Breakfast requested. La hora oficial del desayuno será definida por quien tenga hambre.",
       kitty: "kitty-cream",
       color: "#fff0b8"
     },
@@ -1121,6 +1334,8 @@
       label: "🌶️ Chilaquiles Kitty",
       description:
         "Canjeable por unos buenos chilaquiles dignos de comenzar el día. Verdes, rojos o cualquier combinación diplomáticamente aceptable, favor de agregarles bolillo.",
+      notification:
+        "🌶️ Chilaquiles emergency! Favor de incluir bolillo. Esto no es negociable según el Consejo de Gatitos.",
       kitty: "kitty-tuxedo",
       color: "#d7efcf"
     },
@@ -1130,6 +1345,8 @@
       label: "🎧 Music Kitty",
       description:
         "Canjeable por una canción cuidadosamente seleccionada para la ocasión, porque una buena canción siempre puede alegrar un poquito el día.",
+      notification:
+        "🎧 Music recommendation requested. Es momento de buscar una canción digna de la ocasión.",
       kitty: "kitty-black",
       color: "#ded8ff"
     },
@@ -1139,6 +1356,8 @@
       label: "🎓 Scholar Kitty",
       description:
         "Canjeable únicamente en temas conocidos por el doctorante. La precisión de la respuesta puede incrementarse proporcionalmente a la cantidad de café disponible.",
+      notification:
+        "🎓 Academic knowledge requested. The doctorante has been summoned.",
       kitty: "kitty-orange",
       color: "#cfe9f6"
     },
@@ -1148,6 +1367,8 @@
       label: "⚡ Energy Kitty",
       description:
         "Para esas ocasiones en las que la energía natural ha abandonado oficialmente el chat. Canjeable por un pequeño boost para continuar la misión.",
+      notification:
+        "⚡ Energy levels critical. Red Bull reinforcement has been requested.",
       kitty: "kitty-black",
       color: "#d6e5ff"
     }
@@ -1158,8 +1379,6 @@
   /*
   ==========================================
   CREATE KITTY
-
-  Genera el HTML de cada gatito.
   ==========================================
   */
 
@@ -1231,9 +1450,6 @@
   /*
   ==========================================
   RENDER COUPONS
-
-  Generamos automáticamente todos
-  los cupones de la lista.
   ==========================================
   */
 
@@ -1246,7 +1462,8 @@
 
 
     container.innerHTML =
-      coupons.map((coupon, index) => `
+      coupons.map(
+        (coupon, index) => `
 
         <article
           class="coupon"
@@ -1291,11 +1508,6 @@
       `).join("");
 
 
-    /*
-    Agregamos los eventos después
-    de crear los botones.
-    */
-
     document
       .querySelectorAll(
         ".redeem-button"
@@ -1308,14 +1520,17 @@
 
             const index =
               Number(
-                button.dataset.couponIndex
+                button.dataset
+                  .couponIndex
               );
 
             const coupon =
               coupons[index];
 
+
             redeemCoupon(
               coupon.name,
+              coupon.notification,
               button
             );
 
@@ -1329,69 +1544,26 @@
 
   /*
   ==========================================
-  DUMMY NOTIFICATION
-
-  Actualmente sólo muestra un alert().
-
-  Más adelante esta función será
-  reemplazada por ntfy.
-  ==========================================
-  */
-async function sendNotification(couponName) {
-
-  try {
-
-    const response = await fetch(
-      "https://ntfy.sh/kitty_Coupons",
-      {
-        method: "POST",
-        body:
-          `🐾 Se ha canjeado un cupón:\n\n${couponName}`
-      }
-    );
-
-
-    if (!response.ok) {
-      throw new Error(
-        `ntfy respondió con ${response.status}`
-      );
-    }
-
-
-    console.log(
-      "Notificación enviada:",
-      couponName
-    );
-
-  } catch (error) {
-
-    console.error(
-      "Error enviando notificación:",
-      error
-    );
-
-    alert(
-      "😿 El cupón se canjeó, pero no pude enviar la notificación."
-    );
-
-  }
-
-}
-
-  /*
-  ==========================================
   REDEEM COUPON
-
-  No usamos localStorage.
-  No hay límite de usos.
-  Los cupones son infinitos.
   ==========================================
   */
 
-  function redeemCoupon(
+  async function redeemCoupon(
     name,
+    notification,
     button
   ) {
+
+    /*
+      Evitar doble tap.
+    */
+
+    if (
+      button.dataset.busy === "true"
+    ) {
+      return;
+    }
+
 
     const confirmed =
       confirm(
@@ -1404,52 +1576,23 @@ async function sendNotification(couponName) {
     }
 
 
+    button.dataset.busy =
+      "true";
+
+
     const coupon =
       button.closest(
         ".coupon"
       );
 
 
-    /*
-    Evita tocar el botón varias veces
-    mientras está celebrando.
-    */
-
-    if (
-      button.dataset.busy === "true"
-    ) {
-      return;
-    }
-
-
-    button.dataset.busy =
-      "true";
-
-
-    /*
-    Gatito celebra.
-    */
-
-    coupon.classList.add(
-      "celebrate"
-    );
-
-
-    /*
-    Patitas y estrellitas.
-    */
-
-    createCelebration();
-
-
-    /*
-    Cambiamos el botón
-    temporalmente.
-    */
-
     const originalText =
       button.textContent.trim();
 
+
+    /*
+      Actualizamos el botón primero.
+    */
 
     button.textContent =
       "¡Miau! Canjeado ✨";
@@ -1461,21 +1604,56 @@ async function sendNotification(couponName) {
 
 
     /*
-    Dummy notification.
+      Safari puede necesitar dos frames
+      después de cerrar confirm().
     */
 
-    setTimeout(() => {
-
-      sendNotification(
-        name
-      );
-
-    }, 250);
+    await waitForSafari();
 
 
     /*
-    Después vuelve a estar
-    disponible normalmente.
+      Reiniciamos explícitamente
+      la animación.
+    */
+
+    coupon.classList.remove(
+      "celebrate"
+    );
+
+
+    void coupon.offsetWidth;
+
+
+    coupon.classList.add(
+      "celebrate"
+    );
+
+
+    /*
+      Partículas.
+    */
+
+    createCelebration(
+      button
+    );
+
+
+    /*
+      Enviar ntfy.
+
+      No esperamos a que termine para
+      que la animación no dependa
+      de la conexión.
+    */
+
+    sendNotification(
+      name,
+      notification
+    );
+
+
+    /*
+      Restaurar estado.
     */
 
     setTimeout(() => {
@@ -1484,43 +1662,143 @@ async function sendNotification(couponName) {
         "celebrate"
       );
 
+
       button.classList.remove(
         "success"
       );
 
+
       button.textContent =
         originalText;
+
 
       button.dataset.busy =
         "false";
 
-    }, 1600);
+    }, 1800);
 
   }
 
 
   /*
   ==========================================
-  PAWS + SPARKLES
+  SAFARI RENDER HELPER
   ==========================================
   */
 
-  function createCelebration() {
+  function waitForSafari() {
+
+    return new Promise(resolve => {
+
+      requestAnimationFrame(() => {
+
+        requestAnimationFrame(() => {
+
+          resolve();
+
+        });
+
+      });
+
+    });
+
+  }
+
+
+  /*
+  ==========================================
+  NTFY
+  ==========================================
+  */
+
+  async function sendNotification(
+    couponName,
+    customMessage
+  ) {
+
+    try {
+
+      const response =
+        await fetch(
+          "https://ntfy.sh/kitty_Coupons",
+          {
+
+            method: "POST",
+
+            body:
+              `🐾 KITTY COUPON CANJEADO 🐾\n\n` +
+              `${couponName}\n\n` +
+              `${customMessage}`
+
+          }
+        );
+
+
+      if (!response.ok) {
+
+        throw new Error(
+          `ntfy respondió con ${response.status}`
+        );
+
+      }
+
+
+      console.log(
+        "Notificación enviada:",
+        couponName
+      );
+
+    } catch (error) {
+
+      console.error(
+        "Error enviando notificación:",
+        error
+      );
+
+    }
+
+  }
+
+
+  /*
+  ==========================================
+  CELEBRATION PARTICLES
+  ==========================================
+  */
+
+  function createCelebration(
+    button
+  ) {
 
     const symbols = [
       "🐾",
       "🐾",
       "🐾",
       "♡",
-      "✦",
+      "♡",
       "✨",
-      "♡"
+      "✦",
+      "✨"
     ];
+
+
+    const rect =
+      button.getBoundingClientRect();
+
+
+    const centerX =
+      rect.left +
+      rect.width / 2;
+
+
+    const centerY =
+      rect.top +
+      rect.height / 2;
 
 
     for (
       let i = 0;
-      i < 14;
+      i < 18;
       i++
     ) {
 
@@ -1549,16 +1827,58 @@ async function sendNotification(couponName) {
           : "sparkle";
 
 
+      /*
+        Punto de origen alrededor
+        del botón.
+      */
+
       particle.style.left =
-        `${10 + Math.random() * 80}%`;
+        `${
+          centerX +
+          (Math.random() - .5) *
+          120
+        }px`;
 
 
       particle.style.top =
-        `${45 + Math.random() * 30}%`;
+        `${
+          centerY +
+          (Math.random() - .5) *
+          35
+        }px`;
+
+
+      /*
+        Dirección horizontal.
+      */
+
+      const x =
+        (Math.random() - .5) *
+        140;
+
+
+      const rotation =
+        (Math.random() - .5) *
+        100;
+
+
+      particle.style.setProperty(
+        "--x",
+        `${x}px`
+      );
+
+
+      particle.style.setProperty(
+        "--rotation",
+        `${rotation}deg`
+      );
 
 
       particle.style.animationDelay =
-        `${Math.random() * .25}s`;
+        `${
+          Math.random() *
+          .18
+        }s`;
 
 
       document.body.appendChild(
@@ -1566,11 +1886,20 @@ async function sendNotification(couponName) {
       );
 
 
+      /*
+        Safari:
+        obligamos a calcular el layout.
+      */
+
+      particle
+        .getBoundingClientRect();
+
+
       setTimeout(() => {
 
         particle.remove();
 
-      }, 1400);
+      }, 1600);
 
     }
 
