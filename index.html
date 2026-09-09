@@ -56,6 +56,10 @@
       overflow-x: hidden;
     }
 
+    button {
+      font-family: inherit;
+    }
+
     .app {
       width: 100%;
       max-width: 430px;
@@ -97,7 +101,7 @@
     }
 
     /* =========================
-       INFINITE STATUS
+       STATUS
     ========================= */
 
     .status {
@@ -111,9 +115,7 @@
 
       background: rgba(255,255,255,.75);
 
-      border:
-        1.5px solid
-        rgba(255,255,255,.9);
+      border: 1.5px solid rgba(255,255,255,.9);
 
       box-shadow:
         0 10px 30px
@@ -155,38 +157,17 @@
 
       overflow: hidden;
 
-      background:
-        var(--coupon-color);
+      background: var(--coupon-color);
 
-      border:
-        2px solid
-        rgba(255,255,255,.8);
+      border: 2px solid rgba(255,255,255,.8);
 
       box-shadow:
-        0 16px 36px
-        rgba(105,75,87,.12),
-        inset 0 1px
-        rgba(255,255,255,.8);
+        0 16px 36px rgba(105,75,87,.12),
+        inset 0 1px rgba(255,255,255,.8);
 
       transition:
         transform .18s ease,
         box-shadow .18s ease;
-    }
-
-    .coupon:nth-child(1) {
-      --coupon-color: #ffdce7;
-    }
-
-    .coupon:nth-child(2) {
-      --coupon-color: #ffedb5;
-    }
-
-    .coupon:nth-child(3) {
-      --coupon-color: #ddd4ff;
-    }
-
-    .coupon:nth-child(4) {
-      --coupon-color: #cef0df;
     }
 
     .coupon:active {
@@ -206,8 +187,7 @@
       right: -70px;
       top: -65px;
 
-      background:
-        rgba(255,255,255,.22);
+      background: rgba(255,255,255,.22);
     }
 
     .coupon::after {
@@ -223,8 +203,7 @@
       left: -45px;
       bottom: -50px;
 
-      background:
-        rgba(255,255,255,.2);
+      background: rgba(255,255,255,.2);
     }
 
     .coupon-header {
@@ -247,24 +226,25 @@
 
       border-radius: 999px;
 
-      background:
-        rgba(255,255,255,.63);
+      background: rgba(255,255,255,.63);
 
       font-size: 11px;
       font-weight: 850;
 
       text-transform: uppercase;
       letter-spacing: .7px;
+
+      max-width: 170px;
     }
 
     .coupon h2 {
       position: relative;
       z-index: 4;
 
-      margin:
-        13px 0 8px;
+      margin: 13px 0 8px;
 
       font-size: 27px;
+      line-height: 1.05;
 
       letter-spacing: -.9px;
     }
@@ -273,15 +253,14 @@
       position: relative;
       z-index: 4;
 
-      max-width: 280px;
+      max-width: 290px;
 
-      margin:
-        0 0 22px;
+      margin: 0 0 22px;
 
       font-size: 15px;
       line-height: 1.45;
 
-      opacity: .75;
+      opacity: .76;
     }
 
     /* =========================
@@ -299,7 +278,6 @@
 
       padding: 16px;
 
-      font: inherit;
       font-size: 16px;
       font-weight: 850;
 
@@ -314,7 +292,8 @@
 
       transition:
         transform .12s ease,
-        box-shadow .12s ease;
+        box-shadow .12s ease,
+        background .2s ease;
     }
 
     .redeem-button:active {
@@ -353,16 +332,12 @@
       transform-origin: bottom center;
     }
 
-    /* BLACK */
-
     .kitty-black {
       --fur: #36323b;
       --fur-dark: #211f25;
       --belly: #46404c;
       --paw: #36323b;
     }
-
-    /* ORANGE */
 
     .kitty-orange {
       --fur: #f4a04f;
@@ -371,16 +346,12 @@
       --paw: #f4a04f;
     }
 
-    /* TUXEDO */
-
     .kitty-tuxedo {
       --fur: #38343d;
       --fur-dark: #232127;
       --belly: #fff8f2;
       --paw: #fff8f2;
     }
-
-    /* CREAM */
 
     .kitty-cream {
       --fur: #f1cba1;
@@ -417,8 +388,7 @@
       border-radius:
         45% 45% 35% 35%;
 
-      background:
-        var(--fur);
+      background: var(--fur);
 
       z-index: 2;
     }
@@ -434,8 +404,7 @@
 
       border-radius: 50%;
 
-      background:
-        var(--belly);
+      background: var(--belly);
 
       opacity: .95;
     }
@@ -454,8 +423,7 @@
       border-radius:
         45% 45% 48% 48%;
 
-      background:
-        var(--fur);
+      background: var(--fur);
 
       z-index: 5;
     }
@@ -470,8 +438,7 @@
 
       top: -11px;
 
-      background:
-        var(--fur);
+      background: var(--fur);
 
       z-index: -1;
     }
@@ -661,8 +628,7 @@
       display: none;
     }
 
-    .kitty-orange
-    .kitty-marking {
+    .kitty-orange .kitty-marking {
       display: block;
 
       position: absolute;
@@ -675,20 +641,16 @@
 
       border-radius: 5px;
 
-      background:
-        var(--fur-dark);
+      background: var(--fur-dark);
 
       box-shadow:
-        -10px 3px 0 -1px
-        var(--fur-dark),
-        10px 3px 0 -1px
-        var(--fur-dark);
+        -10px 3px 0 -1px var(--fur-dark),
+        10px 3px 0 -1px var(--fur-dark);
     }
 
     /* TUXEDO FOREHEAD */
 
-    .kitty-tuxedo
-    .kitty-marking {
+    .kitty-tuxedo .kitty-marking {
       display: block;
 
       position: absolute;
@@ -724,8 +686,7 @@
       border-radius:
         60% 60% 50% 50%;
 
-      background:
-        var(--paw);
+      background: var(--paw);
 
       z-index: 5;
     }
@@ -751,8 +712,7 @@
 
       border-radius: 15px;
 
-      background:
-        var(--fur);
+      background: var(--fur);
 
       transform-origin:
         left center;
@@ -776,8 +736,7 @@
 
       border-radius: 50%;
 
-      background:
-        var(--fur-dark);
+      background: var(--fur-dark);
     }
 
     @keyframes tailWag {
@@ -839,29 +798,11 @@
       right: -8px;
     }
 
-    /* DIFFERENT TIMINGS */
-
-    .coupon:nth-child(2)
-    .kitty {
-      animation-delay: .4s;
-    }
-
-    .coupon:nth-child(3)
-    .kitty {
-      animation-delay: .8s;
-    }
-
-    .coupon:nth-child(4)
-    .kitty {
-      animation-delay: 1.2s;
-    }
-
     /* =========================
        CELEBRATION
     ========================= */
 
-    .coupon.celebrate
-    .kitty {
+    .coupon.celebrate .kitty {
       animation:
         kittyCelebrate
         .55s ease-in-out
@@ -995,7 +936,7 @@
     }
 
     /* =========================
-       REDUCED MOTION
+       ACCESSIBILITY
     ========================= */
 
     @media
@@ -1073,7 +1014,7 @@
 
 
   <!-- =====================
-       INFINITE STATUS
+       STATUS
   ====================== -->
 
   <section class="status">
@@ -1089,281 +1030,14 @@
   </section>
 
 
-  <section class="coupons">
-
-
-    <!-- =====================
-         FOOD
-    ====================== -->
-
-    <article class="coupon">
-
-      <div class="coupon-header">
-
-        <span class="coupon-label">
-          🍝 Yummy Kitty
-        </span>
-
-        <div class="kitty kitty-orange">
-
-          <div class="kitty-tail"></div>
-
-          <div class="kitty-body">
-            <div class="kitty-belly"></div>
-            <div class="kitty-paw paw-left"></div>
-            <div class="kitty-paw paw-right"></div>
-          </div>
-
-          <div class="kitty-head">
-
-            <div class="ear ear-left"></div>
-            <div class="ear ear-right"></div>
-
-            <div class="kitty-marking"></div>
-
-            <div class="eye eye-left"></div>
-            <div class="eye eye-right"></div>
-
-            <div class="muzzle"></div>
-            <div class="nose"></div>
-            <div class="mouth"></div>
-
-            <div class="whiskers whiskers-left"></div>
-            <div class="whiskers whiskers-right"></div>
-
-          </div>
-
-        </div>
-
-      </div>
-
-      <h2>
-        Vale por una comida 🍝
-      </h2>
-
-      <p>
-        Canjeable por una deliciosa comida juntos.
-        Puede ser utilizado tantas veces como tu
-        pancita lo considere necesario.
-      </p>
-
-      <button
-        class="redeem-button"
-        onclick="redeemCoupon(
-          'Vale por una comida',
-          this
-        )"
-      >
-        Canjear cupón 🐾
-      </button>
-
-    </article>
-
-
-    <!-- =====================
-         DESSERT
-    ====================== -->
-
-    <article class="coupon">
-
-      <div class="coupon-header">
-
-        <span class="coupon-label">
-          🍰 Sweet Kitty
-        </span>
-
-        <div class="kitty kitty-cream">
-
-          <div class="kitty-tail"></div>
-
-          <div class="kitty-body">
-            <div class="kitty-belly"></div>
-            <div class="kitty-paw paw-left"></div>
-            <div class="kitty-paw paw-right"></div>
-          </div>
-
-          <div class="kitty-head">
-
-            <div class="ear ear-left"></div>
-            <div class="ear ear-right"></div>
-
-            <div class="kitty-marking"></div>
-
-            <div class="eye eye-left"></div>
-            <div class="eye eye-right"></div>
-
-            <div class="muzzle"></div>
-            <div class="nose"></div>
-            <div class="mouth"></div>
-
-            <div class="whiskers whiskers-left"></div>
-            <div class="whiskers whiskers-right"></div>
-
-          </div>
-
-        </div>
-
-      </div>
-
-      <h2>
-        Vale por un postre 🍰
-      </h2>
-
-      <p>
-        Para emergencias relacionadas con azúcar,
-        chocolate, helado, pastelitos o antojos
-        inexplicablemente específicos.
-      </p>
-
-      <button
-        class="redeem-button"
-        onclick="redeemCoupon(
-          'Vale por un postre',
-          this
-        )"
-      >
-        Canjear cupón 🐾
-      </button>
-
-    </article>
-
-
-    <!-- =====================
-         MOVIE
-    ====================== -->
-
-    <article class="coupon">
-
-      <div class="coupon-header">
-
-        <span class="coupon-label">
-          🎬 Cozy Kitty
-        </span>
-
-        <div class="kitty kitty-tuxedo">
-
-          <div class="kitty-tail"></div>
-
-          <div class="kitty-body">
-            <div class="kitty-belly"></div>
-            <div class="kitty-paw paw-left"></div>
-            <div class="kitty-paw paw-right"></div>
-          </div>
-
-          <div class="kitty-head">
-
-            <div class="ear ear-left"></div>
-            <div class="ear ear-right"></div>
-
-            <div class="kitty-marking"></div>
-
-            <div class="eye eye-left"></div>
-            <div class="eye eye-right"></div>
-
-            <div class="muzzle"></div>
-            <div class="nose"></div>
-            <div class="mouth"></div>
-
-            <div class="whiskers whiskers-left"></div>
-            <div class="whiskers whiskers-right"></div>
-
-          </div>
-
-        </div>
-
-      </div>
-
-      <h2>
-        Noche de película 🎬
-      </h2>
-
-      <p>
-        Incluye película, snacks y derecho
-        inalienable a ponerse cómodo.
-        No expira jamás.
-      </p>
-
-      <button
-        class="redeem-button"
-        onclick="redeemCoupon(
-          'Noche de película',
-          this
-        )"
-      >
-        Canjear cupón 🐾
-      </button>
-
-    </article>
-
-
-    <!-- =====================
-         SURPRISE
-    ====================== -->
-
-    <article class="coupon">
-
-      <div class="coupon-header">
-
-        <span class="coupon-label">
-          🎁 Mystery Kitty
-        </span>
-
-        <div class="kitty kitty-black">
-
-          <div class="kitty-tail"></div>
-
-          <div class="kitty-body">
-            <div class="kitty-belly"></div>
-            <div class="kitty-paw paw-left"></div>
-            <div class="kitty-paw paw-right"></div>
-          </div>
-
-          <div class="kitty-head">
-
-            <div class="ear ear-left"></div>
-            <div class="ear ear-right"></div>
-
-            <div class="kitty-marking"></div>
-
-            <div class="eye eye-left"></div>
-            <div class="eye eye-right"></div>
-
-            <div class="muzzle"></div>
-            <div class="nose"></div>
-            <div class="mouth"></div>
-
-            <div class="whiskers whiskers-left"></div>
-            <div class="whiskers whiskers-right"></div>
-
-          </div>
-
-        </div>
-
-      </div>
-
-      <h2>
-        Vale por una sorpresa 🎁
-      </h2>
-
-      <p>
-        El contenido permanece estrictamente
-        clasificado. Los gatitos saben de qué
-        se trata, pero se niegan a cooperar.
-      </p>
-
-      <button
-        class="redeem-button"
-        onclick="redeemCoupon(
-          'Vale por una sorpresa',
-          this
-        )"
-      >
-        Canjear cupón 🐾
-      </button>
-
-    </article>
-
-  </section>
+  <!-- =====================
+       COUPONS
+  ====================== -->
+
+  <section
+    class="coupons"
+    id="coupons"
+  ></section>
 
 
   <footer>
@@ -1379,18 +1053,299 @@
 
   /*
   ==========================================
-  DUMMY NOTIFICATION
-  ==========================================
+  COUPONS
 
-  Más adelante cambiaremos solamente
-  esta función por ntfy.
+  Para agregar un cupón nuevo solamente
+  agrega otro objeto a esta lista.
+  ==========================================
   */
 
-  function sendNotification(couponName) {
+  const coupons = [
+
+    {
+      name: "Vale por un café ☕",
+      label: "☕ Programmer Fuel",
+      description:
+        "Válido hasta que se muera el programador. Porque, mientras haya código por escribir, siempre hay tiempo para un café.",
+      kitty: "kitty-orange",
+      color: "#ffdce7"
+    },
+
+    {
+      name: "Vale por un Pumpkin Spice 🎃",
+      label: "🎃 Seasonal Kitty",
+      description:
+        "Válido durante la temporada oficial del pumpkin. Ideal para esos días en los que el calendario dice otoño aunque el clima no esté cooperando.",
+      kitty: "kitty-cream",
+      color: "#ffe4bd"
+    },
+
+    {
+      name: "Vale por un abrazo 🤍",
+      label: "🤍 Hug Kitty",
+      description:
+        "Canjeable en cualquier momento y sin necesidad de justificación, porque los abrazos jamás están de más. Incluye modalidad de duración extendida.",
+      kitty: "kitty-tuxedo",
+      color: "#ddd4ff"
+    },
+
+    {
+      name: "Vale por un ramen del matgo 🍜",
+      label: "🍜 Ramen Kitty",
+      description:
+        "Canjeable por un buen ramen del matgo. Especialmente recomendado para días fríos, días largos o cualquier situación que pueda solucionarse con fideos.",
+      kitty: "kitty-black",
+      color: "#cef0df"
+    },
+
+    {
+      name: "Vale por una hamburguesa 🍔",
+      label: "🍔 Burger Kitty",
+      description:
+        "Canjeable cuando el cuerpo indique claramente que una ensalada no era la respuesta. Papitas altamente recomendadas, pero sujetas a negociación.",
+      kitty: "kitty-orange",
+      color: "#ffd8c7"
+    },
+
+    {
+      name: "Vale por un desayuno 🍳",
+      label: "🍳 Morning Kitty",
+      description:
+        "Porque empezar el día con algo rico mejora considerablemente cualquier pronóstico. Válido incluso si técnicamente ya es hora de comer.",
+      kitty: "kitty-cream",
+      color: "#fff0b8"
+    },
+
+    {
+      name: "Vale por unos buenos chilaquiles 🌶️",
+      label: "🌶️ Chilaquiles Kitty",
+      description:
+        "Canjeable por unos buenos chilaquiles dignos de comenzar el día. Verdes, rojos o cualquier combinación diplomáticamente aceptable.",
+      kitty: "kitty-tuxedo",
+      color: "#d7efcf"
+    },
+
+    {
+      name: "Vale por una recomendación musical 🎧",
+      label: "🎧 Music Kitty",
+      description:
+        "Canjeable por una canción cuidadosamente seleccionada para la ocasión, porque una buena canción siempre puede alegrar un poquito el día.",
+      kitty: "kitty-black",
+      color: "#ded8ff"
+    },
+
+    {
+      name: "Vale por conocimiento académico 🎓",
+      label: "🎓 Scholar Kitty",
+      description:
+        "Canjeable únicamente en temas conocidos por el doctorante. La precisión de la respuesta puede incrementarse proporcionalmente a la cantidad de café disponible.",
+      kitty: "kitty-orange",
+      color: "#cfe9f6"
+    },
+
+    {
+      name: "Vale por un Red Bull ⚡",
+      label: "⚡ Energy Kitty",
+      description:
+        "Para esas ocasiones en las que la energía natural ha abandonado oficialmente el chat. Canjeable por un pequeño boost para continuar la misión.",
+      kitty: "kitty-black",
+      color: "#d6e5ff"
+    }
+
+  ];
+
+
+  /*
+  ==========================================
+  CREATE KITTY
+
+  Genera el HTML de cada gatito.
+  ==========================================
+  */
+
+  function createKitty(type) {
+
+    return `
+      <div class="kitty ${type}">
+
+        <div class="kitty-tail"></div>
+
+        <div class="kitty-body">
+
+          <div class="kitty-belly"></div>
+
+          <div
+            class="kitty-paw paw-left"
+          ></div>
+
+          <div
+            class="kitty-paw paw-right"
+          ></div>
+
+        </div>
+
+        <div class="kitty-head">
+
+          <div
+            class="ear ear-left"
+          ></div>
+
+          <div
+            class="ear ear-right"
+          ></div>
+
+          <div
+            class="kitty-marking"
+          ></div>
+
+          <div
+            class="eye eye-left"
+          ></div>
+
+          <div
+            class="eye eye-right"
+          ></div>
+
+          <div class="muzzle"></div>
+
+          <div class="nose"></div>
+
+          <div class="mouth"></div>
+
+          <div
+            class="whiskers whiskers-left"
+          ></div>
+
+          <div
+            class="whiskers whiskers-right"
+          ></div>
+
+        </div>
+
+      </div>
+    `;
+
+  }
+
+
+  /*
+  ==========================================
+  RENDER COUPONS
+
+  Generamos automáticamente todos
+  los cupones de la lista.
+  ==========================================
+  */
+
+  function renderCoupons() {
+
+    const container =
+      document.getElementById(
+        "coupons"
+      );
+
+
+    container.innerHTML =
+      coupons.map((coupon, index) => `
+
+        <article
+          class="coupon"
+          style="
+            --coupon-color:
+            ${coupon.color};
+          "
+        >
+
+          <div class="coupon-header">
+
+            <span class="coupon-label">
+              ${coupon.label}
+            </span>
+
+            ${createKitty(
+              coupon.kitty
+            )}
+
+          </div>
+
+
+          <h2>
+            ${coupon.name}
+          </h2>
+
+
+          <p>
+            ${coupon.description}
+          </p>
+
+
+          <button
+            class="redeem-button"
+            data-coupon-index="${index}"
+          >
+            Canjear cupón 🐾
+          </button>
+
+        </article>
+
+      `).join("");
+
+
+    /*
+    Agregamos los eventos después
+    de crear los botones.
+    */
+
+    document
+      .querySelectorAll(
+        ".redeem-button"
+      )
+      .forEach(button => {
+
+        button.addEventListener(
+          "click",
+          () => {
+
+            const index =
+              Number(
+                button.dataset.couponIndex
+              );
+
+            const coupon =
+              coupons[index];
+
+            redeemCoupon(
+              coupon.name,
+              button
+            );
+
+          }
+        );
+
+      });
+
+  }
+
+
+  /*
+  ==========================================
+  DUMMY NOTIFICATION
+
+  Actualmente sólo muestra un alert().
+
+  Más adelante esta función será
+  reemplazada por ntfy.
+  ==========================================
+  */
+
+  function sendNotification(
+    couponName
+  ) {
 
     alert(
       `🐾 MIAU!\n\n` +
-      `Se canjeó:\n${couponName}\n\n` +
+      `Se canjeó:\n` +
+      `${couponName}\n\n` +
       `Este cupón puede volver a usarse ✨`
     );
 
@@ -1399,21 +1354,24 @@
 
   /*
   ==========================================
-  REDEEM
+  REDEEM COUPON
 
-  IMPORTANTE:
-  No usamos localStorage para bloquear
-  ningún cupón.
-
-  Todos pueden canjearse infinitamente.
+  No usamos localStorage.
+  No hay límite de usos.
+  Los cupones son infinitos.
   ==========================================
   */
 
-  function redeemCoupon(name, button) {
+  function redeemCoupon(
+    name,
+    button
+  ) {
 
-    const confirmed = confirm(
-      `¿Quieres canjear "${name}"? 🐾`
-    );
+    const confirmed =
+      confirm(
+        `¿Quieres canjear "${name}"? 🐾`
+      );
+
 
     if (!confirmed) {
       return;
@@ -1421,30 +1379,55 @@
 
 
     const coupon =
-      button.closest(".coupon");
+      button.closest(
+        ".coupon"
+      );
 
 
     /*
-    Celebración visual
+    Evita tocar el botón varias veces
+    mientras está celebrando.
+    */
+
+    if (
+      button.dataset.busy === "true"
+    ) {
+      return;
+    }
+
+
+    button.dataset.busy =
+      "true";
+
+
+    /*
+    Gatito celebra.
     */
 
     coupon.classList.add(
       "celebrate"
     );
 
+
+    /*
+    Patitas y estrellitas.
+    */
+
     createCelebration();
 
 
     /*
-    Cambiar botón temporalmente.
-    NO queda bloqueado.
+    Cambiamos el botón
+    temporalmente.
     */
 
     const originalText =
-      button.textContent;
+      button.textContent.trim();
+
 
     button.textContent =
       "¡Miau! Canjeado ✨";
+
 
     button.classList.add(
       "success"
@@ -1452,24 +1435,21 @@
 
 
     /*
-    Por ahora:
-    alert dummy.
-
-    Después:
-    ntfy.
+    Dummy notification.
     */
 
     setTimeout(() => {
 
-      sendNotification(name);
+      sendNotification(
+        name
+      );
 
     }, 250);
 
 
     /*
-    Después vuelve al estado original.
-
-    El cupón puede usarse nuevamente.
+    Después vuelve a estar
+    disponible normalmente.
     */
 
     setTimeout(() => {
@@ -1484,6 +1464,9 @@
 
       button.textContent =
         originalText;
+
+      button.dataset.busy =
+        "false";
 
     }, 1600);
 
@@ -1501,20 +1484,25 @@
     const symbols = [
       "🐾",
       "🐾",
+      "🐾",
       "♡",
       "✦",
-      "✨"
+      "✨",
+      "♡"
     ];
 
 
     for (
       let i = 0;
-      i < 13;
+      i < 14;
       i++
     ) {
 
       const particle =
-        document.createElement("div");
+        document.createElement(
+          "div"
+        );
+
 
       const symbol =
         symbols[
@@ -1524,8 +1512,10 @@
           )
         ];
 
+
       particle.textContent =
         symbol;
+
 
       particle.className =
         symbol === "🐾"
@@ -1536,8 +1526,10 @@
       particle.style.left =
         `${10 + Math.random() * 80}%`;
 
+
       particle.style.top =
         `${45 + Math.random() * 30}%`;
+
 
       particle.style.animationDelay =
         `${Math.random() * .25}s`;
@@ -1557,6 +1549,15 @@
     }
 
   }
+
+
+  /*
+  ==========================================
+  START
+  ==========================================
+  */
+
+  renderCoupons();
 
 </script>
 
