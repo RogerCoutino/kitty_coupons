@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, viewport-fit=cover"
+  />
+
+  <meta name="theme-color" content="#fff4f7" />
+
+  <title>Kitty Coupons 🐾</title>
+
+  <style>
+    :root {
+      --pink: #ff9fbd;
+      --pink-dark: #ef6f99;
+      --cream: #fff8ee;
+      --lavender: #d9c8ff;
+      --yellow: #ffe79c;
+      --mint: #c8f3dd;
+      --text: #40333a;
+      --white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    html {
+      background: #fff4f7;
+    }
+
+    body {
+      margin: 0;
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "SF Pro Rounded",
+        "Segoe UI",
+        sans-serif;
+
+      color: var(--text);
+
+      background:
+        radial-gradient(circle at 10% 10%, #ffdce7 0 8%, transparent 9%),
+        radial-gradient(circle at 90% 20%, #e7dcff 0 7%, transparent 8%),
+        linear-gradient(180deg, #fff5f8, #fffaf2);
+
+      min-height: 100dvh;
+
+      padding:
+        calc(18px + env(safe-area-inset-top))
+        18px
+        calc(40px + env(safe-area-inset-bottom));
+    }
+
+    .app {
+      width: 100%;
+      max-width: 430px;
+      margin: 0 auto;
+    }
+
+    /* ------------------
+       HEADER
+    ------------------ */
+
+    .hero {
+      text-align: center;
+      padding: 10px 10px 24px;
+    }
+
+    .hero-cat {
+      font-size: 58px;
+      display: inline-block;
+      animation: floatCat 3s ease-in-out infinite;
+      transform-origin: bottom center;
+    }
+
+    @keyframes floatCat {
+      0%, 100% {
+        transform: translateY(0) rotate(-3deg);
+      }
+
+      50% {
+        transform: translateY(-9px) rotate(3deg);
+      }
+    }
+
+    h1 {
+      margin: 8px 0 4px;
+      font-size: clamp(30px, 9vw, 42px);
+      line-height: 1;
+      letter-spacing: -1.5px;
+    }
+
+    .subtitle {
+      margin: 10px auto 0;
+      max-width: 310px;
+      opacity: 0.72;
+      font-size: 15px;
+      line-height: 1.45;
+    }
+
+    /* ------------------
+       COUNTER
+    ------------------ */
+
+    .counter {
+      background: rgba(255,255,255,0.75);
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+
+      border: 1.5px solid rgba(255,255,255,.85);
+
+      border-radius: 22px;
+      padding: 14px 18px;
+      margin-bottom: 18px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      box-shadow: 0 8px 25px rgba(120,70,90,.08);
+    }
+
+    .counter-label {
+      font-size: 14px;
+      opacity: .7;
+    }
+
+    .counter-number {
+      font-weight: 800;
+      font-size: 20px;
+    }
+
+    /* ------------------
+       COUPONS
+    ------------------ */
+
+    .coupons {
+      display: grid;
+      gap: 18px;
+    }
+
+    .coupon {
+      position: relative;
+      overflow: hidden;
+
+      min-height: 250px;
+
+      padding: 24px;
+
+      border-radius: 30px;
+
+      background: var(--coupon-color);
+
+      border: 2px solid rgba(255,255,255,.75);
+
+      box-shadow:
+        0 15px 35px rgba(110, 75, 90, .12),
+        inset 0 1px rgba(255,255,255,.7);
+
+      transition:
+        transform .2s ease,
+        opacity .3s ease;
+    }
+
+    .coupon:active {
+      transform: scale(.985);
+    }
+
+    .coupon:nth-child(1) {
+      --coupon-color: #ffd8e4;
+    }
+
+    .coupon:nth-child(2) {
+      --coupon-color: #fff0b8;
+    }
+
+    .coupon:nth-child(3) {
+      --coupon-color: #dcd0ff;
+    }
+
+    .coupon:nth-child(4) {
+      --coupon-color: #ccf0df;
+    }
+
+    /* Decorative circles */
+
+    .coupon::before,
+    .coupon::after {
+      content: "";
+      position: absolute;
+      border-radius: 999px;
+      background: rgba(255,255,255,.23);
+    }
+
+    .coupon::before {
+      width: 150px;
+      height: 150px;
+      right: -60px;
+      top: -55px;
+    }
+
+    .coupon::after {
+      width: 100px;
+      height: 100px;
+      left: -40px;
+      bottom: -40px;
+    }
+
+    .coupon-top {
+      position: relative;
+      z-index: 2;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .coupon-label {
+      display: inline-block;
+
+      padding: 7px 12px;
+
+      border-radius: 999px;
+
+      background: rgba(255,255,255,.65);
+
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .7px;
+    }
+
+    .cat {
+      font-size: 46px;
+      animation: kittyWiggle 2.6s ease-in-out infinite;
+      transform-origin: bottom center;
+    }
+
+    .coupon:nth-child(2) .cat {
+      animation-delay: .4s;
+    }
+
+    .coupon:nth-child(3) .cat {
+      animation-delay: .8s;
+    }
+
+    .coupon:nth-child(4) .cat {
+      animation-delay: 1.2s;
+    }
+
+    @keyframes kittyWiggle {
+      0%, 100% {
+        transform: rotate(-4deg) translateY(0);
+      }
+
+      50% {
+        transform: rotate(5deg) translateY(-5px);
+      }
+    }
+
+    .coupon h2 {
+      position: relative;
+      z-index: 2;
+
+      font-size: 27px;
+      letter-spacing: -.8px;
+
+      margin: 24px 0 8px;
+    }
+
+    .coupon p {
+      position: relative;
+      z-index: 2;
+
+      margin: 0 0 22px;
+
+      font-size: 15px;
+      line-height: 1.45;
+      opacity: .78;
+
+      max-width: 270px;
+    }
+
+    /* ------------------
+       BUTTON
+    ------------------ */
+
+    .redeem-button {
+      position: relative;
+      z-index: 3;
+
+      width: 100%;
+
+      border: 0;
+      border-radius: 18px;
+
+      padding: 15px 18px;
+
+      font: inherit;
+      font-weight: 800;
+      font-size: 16px;
+
+      color: white;
+      background: #40333a;
+
+      cursor: pointer;
+
+      box-shadow: 0 7px 0 rgba(0,0,0,.12);
+
+      transition:
+        transform .12s ease,
+        box-shadow .12s ease;
+    }
+
+    .redeem-button:active {
+      transform: translateY(5px);
+      box-shadow: 0 2px 0 rgba(0,0,0,.12);
+    }
+
+    /* ------------------
+       REDEEMED STATE
+    ------------------ */
+
+    .coupon.redeemed {
+      opacity: .62;
+    }
+
+    .coupon.redeemed .redeem-button {
+      background: rgba(64,51,58,.45);
+      box-shadow: none;
+    }
+
+    .redeemed-stamp {
+      display: none;
+
+      position: absolute;
+      z-index: 5;
+
+      top: 85px;
+      right: 18px;
+
+      transform: rotate(12deg);
+
+      border: 4px solid #d15b7d;
+
+      color: #d15b7d;
+
+      border-radius: 12px;
+
+      padding: 8px 12px;
+
+      font-size: 18px;
+      font-weight: 900;
+      letter-spacing: 1px;
+
+      text-transform: uppercase;
+    }
+
+    .coupon.redeemed .redeemed-stamp {
+      display: block;
+      animation: stamp .35s cubic-bezier(.3,1.5,.5,1);
+    }
+
+    @keyframes stamp {
+      from {
+        opacity: 0;
+        transform: scale(1.8) rotate(12deg);
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1) rotate(12deg);
+      }
+    }
+
+    /* ------------------
+       PAWS
+    ------------------ */
+
+    .paw {
+      position: fixed;
+      pointer-events: none;
+
+      font-size: 22px;
+
+      animation: pawPop .8s forwards;
+      z-index: 100;
+    }
+
+    @keyframes pawPop {
+      0% {
+        transform: translateY(0) scale(.5) rotate(0deg);
+        opacity: 0;
+      }
+
+      30% {
+        opacity: 1;
+      }
+
+      100% {
+        transform: translateY(-90px) scale(1.3) rotate(35deg);
+        opacity: 0;
+      }
+    }
+
+    footer {
+      text-align: center;
+
+      padding: 30px 10px 5px;
+
+      opacity: .55;
+      font-size: 13px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="app">
+
+    <header class="hero">
+      <div class="hero-cat">🐈‍⬛</div>
+
+      <h1>Kitty Coupons</h1>
+
+      <p class="subtitle">
+        Pequeños vales oficiales aprobados por el
+        Consejo Internacional de Gatitos™ 🐾
+      </p>
+    </header>
+
+
+    <section class="counter">
+      <span class="counter-label">
+        Cupones disponibles
+      </span>
+
+      <span
+        class="counter-number"
+        id="availableCount"
+      >
+        4
+      </span>
+    </section>
+
+
+    <section class="coupons">
+
+      <!-- COUPON 1 -->
+
+      <article
+        class="coupon"
+        data-coupon="dinner"
+      >
+
+        <div class="redeemed-stamp">
+          Canjeado!
+        </div>
+
+        <div class="coupon-top">
+          <span class="coupon-label">
+            Yummy Coupon
+          </span>
+
+          <span class="cat">
+            🐈
+          </span>
+        </div>
+
+        <h2>
+          Vale por una comida 🍝
+        </h2>
+
+        <p>
+          Canjeable por una deliciosa comida juntos.
+          Tú eliges qué comer.
+        </p>
+
+        <button
+          class="redeem-button"
+          onclick="redeemCoupon('dinner', 'Vale por una comida', this)"
+        >
+          Canjear cupón 🐾
+        </button>
+
+      </article>
+
+
+      <!-- COUPON 2 -->
+
+      <article
+        class="coupon"
+        data-coupon="dessert"
+      >
+
+        <div class="redeemed-stamp">
+          Canjeado!
+        </div>
+
+        <div class="coupon-top">
+
+          <span class="coupon-label">
+            Sweet Kitty
+          </span>
+
+          <span class="cat">
+            🐱
+          </span>
+
+        </div>
+
+        <h2>
+          Vale por un postre 🍰
+        </h2>
+
+        <p>
+          Una emergencia de azúcar será atendida
+          inmediatamente.
+        </p>
+
+        <button
+          class="redeem-button"
+          onclick="redeemCoupon('dessert', 'Vale por un postre', this)"
+        >
+          Canjear cupón 🐾
+        </button>
+
+      </article>
+
+
+      <!-- COUPON 3 -->
+
+      <article
+        class="coupon"
+        data-coupon="movie"
+      >
+
+        <div class="redeemed-stamp">
+          Canjeado!
+        </div>
+
+        <div class="coupon-top">
+
+          <span class="coupon-label">
+            Cozy Coupon
+          </span>
+
+          <span class="cat">
+            🐈‍⬛
+          </span>
+
+        </div>
+
+        <h2>
+          Noche de película 🎬
+        </h2>
+
+        <p>
+          Incluye película, snacks y cero objeciones
+          sobre tu elección.
+        </p>
+
+        <button
+          class="redeem-button"
+          onclick="redeemCoupon('movie', 'Noche de película', this)"
+        >
+          Canjear cupón 🐾
+        </button>
+
+      </article>
+
+
+      <!-- COUPON 4 -->
+
+      <article
+        class="coupon"
+        data-coupon="surprise"
+      >
+
+        <div class="redeemed-stamp">
+          Canjeado!
+        </div>
+
+        <div class="coupon-top">
+
+          <span class="coupon-label">
+            Mystery Kitty
+          </span>
+
+          <span class="cat">
+            😼
+          </span>
+
+        </div>
+
+        <h2>
+          Vale por una sorpresa 🎁
+        </h2>
+
+        <p>
+          El contenido de este cupón es clasificado.
+          Los gatitos saben más de lo que dicen.
+        </p>
+
+        <button
+          class="redeem-button"
+          onclick="redeemCoupon('surprise', 'Vale por una sorpresa', this)"
+        >
+          Canjear cupón 🐾
+        </button>
+
+      </article>
+
+    </section>
+
+
+    <footer>
+      Made with ♡ & cat hair
+    </footer>
+
+  </main>
+
+
+  <script>
+
+    /*
+    ==========================================
+    DUMMY NOTIFICATION
+
+    Más adelante sustituiremos esta función
+    por el POST real hacia ntfy.
+    ==========================================
+    */
+
+    function sendNotification(couponName) {
+
+      alert(
+        `🐾 Miau!\n\nSe canjeó:\n${couponName}`
+      );
+
+    }
+
+
+    /*
+    ==========================================
+    REDEEM COUPON
+    ==========================================
+    */
+
+    function redeemCoupon(id, name, button) {
+
+      const storageKey = `kittyCoupon_${id}`;
+
+      const alreadyRedeemed =
+        localStorage.getItem(storageKey);
+
+      if (alreadyRedeemed) {
+
+        alert(
+          "😿 Este cupón ya fue canjeado."
+        );
+
+        return;
+      }
+
+
+      const confirmed = confirm(
+        `¿Seguro que quieres canjear "${name}"? 🐾`
+      );
+
+      if (!confirmed) {
+        return;
+      }
+
+
+      /*
+      Guardamos el cupón como canjeado
+      */
+
+      localStorage.setItem(
+        storageKey,
+        new Date().toISOString()
+      );
+
+
+      /*
+      Actualizamos UI
+      */
+
+      const coupon =
+        button.closest(".coupon");
+
+      coupon.classList.add("redeemed");
+
+      button.textContent =
+        "Cupón canjeado ✓";
+
+      button.disabled = true;
+
+
+      /*
+      Pequeña explosión de patitas
+      */
+
+      createPaws();
+
+
+      /*
+      Dummy notification
+
+      AQUÍ irá ntfy después.
+      */
+
+      sendNotification(name);
+
+
+      updateCounter();
+
+    }
+
+
+    /*
+    ==========================================
+    LOAD SAVED STATE
+    ==========================================
+    */
+
+    function loadCoupons() {
+
+      document
+        .querySelectorAll(".coupon")
+        .forEach(coupon => {
+
+          const id =
+            coupon.dataset.coupon;
+
+          const storageKey =
+            `kittyCoupon_${id}`;
+
+          if (
+            localStorage.getItem(storageKey)
+          ) {
+
+            coupon
+              .classList
+              .add("redeemed");
+
+            const button =
+              coupon.querySelector(
+                ".redeem-button"
+              );
+
+            button.textContent =
+              "Cupón canjeado ✓";
+
+            button.disabled = true;
+
+          }
+
+        });
+
+      updateCounter();
+
+    }
+
+
+    /*
+    ==========================================
+    COUNTER
+    ==========================================
+    */
+
+    function updateCounter() {
+
+      const coupons =
+        document.querySelectorAll(
+          ".coupon"
+        );
+
+      let available = 0;
+
+      coupons.forEach(coupon => {
+
+        const id =
+          coupon.dataset.coupon;
+
+        if (
+          !localStorage.getItem(
+            `kittyCoupon_${id}`
+          )
+        ) {
+          available++;
+        }
+
+      });
+
+      document.getElementById(
+        "availableCount"
+      ).textContent = available;
+
+    }
+
+
+    /*
+    ==========================================
+    PAW ANIMATION
+    ==========================================
+    */
+
+    function createPaws() {
+
+      for (
+        let i = 0;
+        i < 8;
+        i++
+      ) {
+
+        const paw =
+          document.createElement("div");
+
+        paw.className = "paw";
+        paw.textContent = "🐾";
+
+        paw.style.left =
+          `${20 + Math.random() * 60}%`;
+
+        paw.style.top =
+          `${45 + Math.random() * 25}%`;
+
+        paw.style.animationDelay =
+          `${Math.random() * .25}s`;
+
+        document.body.appendChild(paw);
+
+        setTimeout(
+          () => paw.remove(),
+          1200
+        );
+
+      }
+
+    }
+
+
+    /*
+    ==========================================
+    START
+    ==========================================
+    */
+
+    loadCoupons();
+
+  </script>
+
+</body>
+</html>
