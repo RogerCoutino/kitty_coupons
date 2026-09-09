@@ -1337,20 +1337,46 @@
   reemplazada por ntfy.
   ==========================================
   */
+async function sendNotification(couponName) {
 
-  function sendNotification(
-    couponName
-  ) {
+  try {
+
+    const response = await fetch(
+      "https://ntfy.sh/kitty_Coupons",
+      {
+        method: "POST",
+        body:
+          `🐾 Se ha canjeado un cupón:\n\n${couponName}`
+      }
+    );
+
+
+    if (!response.ok) {
+      throw new Error(
+        `ntfy respondió con ${response.status}`
+      );
+    }
+
+
+    console.log(
+      "Notificación enviada:",
+      couponName
+    );
+
+  } catch (error) {
+
+    console.error(
+      "Error enviando notificación:",
+      error
+    );
 
     alert(
-      `🐾 MIAU!\n\n` +
-      `Se canjeó:\n` +
-      `${couponName}\n\n` +
-      `Este cupón puede volver a usarse ✨`
+      "😿 El cupón se canjeó, pero no pude enviar la notificación."
     );
 
   }
 
+}
 
   /*
   ==========================================
